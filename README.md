@@ -37,11 +37,59 @@ This project allows users to register, login, receive a JWT token, and access AP
 ## Project Structure
 
 ```text
-src/main/java
+src/main/java/com/yourpackage/rolebasedauth
+│
 ├── controller
+│   ├── AuthController.java
+│   ├── AdminController.java
+│   └── UserController.java
+│
 ├── service
+│   ├── AuthService.java
+│   ├── UserService.java
+│   └── impl
+│       ├── AuthServiceImpl.java
+│       └── UserServiceImpl.java
+│
 ├── repository
+│   └── UserRepository.java
+│
 ├── entity
+│   ├── User.java
+│   └── Role.java
+│
 ├── dto
+│   ├── RegisterRequest.java
+│   ├── LoginRequest.java
+│   ├── AuthResponse.java
+│   └── UserResponse.java
+│
 ├── security
-└── exception
+│   ├── SecurityConfig.java
+│   ├── JwtService.java
+│   ├── JwtAuthenticationFilter.java
+│   └── CustomUserDetailsService.java
+│
+├── exception
+│   ├── ResourceNotFoundException.java
+│   ├── DuplicateResourceException.java
+│   └── GlobalExceptionHandler.java
+│
+└── RoleBasedAuthorisationSystemApplication.java
+
+
+Below it, add this explanation:
+
+```md
+## Folder Responsibilities
+
+| Folder | Purpose |
+|---|---|
+| `controller` | Handles incoming HTTP requests and returns API responses |
+| `service` | Contains the main business logic of the application |
+| `service/impl` | Contains the actual implementation of service interfaces |
+| `repository` | Communicates with the database using Spring Data JPA |
+| `entity` | Contains database table models such as `User` and `Role` |
+| `dto` | Defines request and response objects used by APIs |
+| `security` | Contains Spring Security, JWT, authentication, and authorization logic |
+| `exception` | Handles custom errors and global exception responses |
