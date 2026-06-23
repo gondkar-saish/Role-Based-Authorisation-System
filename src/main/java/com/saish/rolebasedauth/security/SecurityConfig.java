@@ -70,6 +70,8 @@ public class SecurityConfig {
         return authProvider;
     }
 
+    // this is a new comment
+
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
