@@ -77,12 +77,7 @@ src/main/java/com/yourpackage/rolebasedauth
 │
 └── RoleBasedAuthorisationSystemApplication.java
 
-
-Below it, add this explanation:
-
-```md
 ## Folder Responsibilities
-
 | Folder | Purpose |
 |---|---|
 | `controller` | Handles incoming HTTP requests and returns API responses |
