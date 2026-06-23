@@ -1,8 +1,21 @@
-# Role-Based Authorisation System
+# Role-Based Authorization System
 
-A Spring Boot backend project that implements user authentication and role-based authorisation using Spring Security and JWT.
+A Spring Boot backend project that implements **authentication** and **role-based authorization** using **Spring Security**, **JWT**, and **MySQL**.
 
-This project allows users to register, login, receive a JWT token, and access APIs based on their assigned role such as `ADMIN` or `USER`.
+This project allows users to register, login, receive a JWT token, and access protected APIs based on their assigned role such as `USER`, `ADMIN`, or `MANAGER`.
+
+---
+
+## Project Overview
+
+The main goal of this project is to understand how backend security works in a real Spring Boot application.
+
+Instead of allowing every user to access every API, this project checks:
+
+- Who the user is
+- Whether the user has a valid JWT token
+- What role the user has
+- Whether that role is allowed to access the requested API
 
 ---
 
@@ -10,13 +23,16 @@ This project allows users to register, login, receive a JWT token, and access AP
 
 - User registration
 - User login
+- Password encryption using BCrypt
 - JWT token generation
 - JWT token validation
 - Role-based API access
-- Spring Security integration
-- Password encryption using BCrypt
+- Spring Security configuration
+- Protected REST APIs
 - MySQL database integration
-- Layered architecture using Controller, Service, Repository, Entity, and DTO
+- Layered architecture
+- DTO-based request and response handling
+- Global exception handling
 
 ---
 
@@ -30,7 +46,7 @@ This project allows users to register, login, receive a JWT token, and access AP
 - Spring Data JPA
 - Hibernate
 - Maven
-- Postman / Swagger for testing
+- Postman / Swagger for API testing
 
 ---
 
@@ -76,15 +92,3 @@ src/main/java/com/yourpackage/rolebasedauth
 │   └── GlobalExceptionHandler.java
 │
 └── RoleBasedAuthorisationSystemApplication.java
-
-## Folder Responsibilities
-| Folder | Purpose |
-|---|---|
-| `controller` | Handles incoming HTTP requests and returns API responses |
-| `service` | Contains the main business logic of the application |
-| `service/impl` | Contains the actual implementation of service interfaces |
-| `repository` | Communicates with the database using Spring Data JPA |
-| `entity` | Contains database table models such as `User` and `Role` |
-| `dto` | Defines request and response objects used by APIs |
-| `security` | Contains Spring Security, JWT, authentication, and authorization logic |
-| `exception` | Handles custom errors and global exception responses |
